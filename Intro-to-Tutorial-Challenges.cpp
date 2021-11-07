@@ -1,12 +1,25 @@
-   vector<int>a(n);
-   for(int i=0;i<n;i++)
-   {
-       cin>>a[i];
-       
-   }
-   
-    for(int i=0;i<n;i++)
-   {
-       if(a[i]==c)
-       cout<<i;
-   }
+int introTutorial(int V, vector<int> arr)
+{
+    int i = 0;
+    int n = arr.size() - 1;
+
+    while (i <= n)
+    {
+        int m = (i + n) / 2;
+        
+        if (arr.at(m) == V)
+        {
+            return m;
+        }
+        else if (arr.at(m) > V)
+        {
+            n = m - 1;
+        }
+        else
+        {
+            i = m + 1;
+        }
+    }
+
+    return 0;
+}
