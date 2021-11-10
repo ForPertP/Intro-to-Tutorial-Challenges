@@ -8,7 +8,7 @@ int introTutorial(int V, vector<int> arr)
 int introTutorial(int V, vector<int> arr)
 {
     int left = 0;
-    int right = arr.size();
+    int right = arr.size() - 1;
     int median = 0;
     int index = 0;
     
