@@ -24,6 +24,15 @@ int introTutorial(int V, std::vector<int> arr)
         return -1;
 }
 
+int introTutorial1(int V, std::vector<int> arr)
+{
+    auto it = std::lower_bound(arr.begin(), arr.end(), V);
+    if (it != arr.end() && *it == V)
+        return it - arr.begin();
+    else
+        return -1;
+}
+
 
 int introTutorial2(int V, vector<int> arr)
 {
