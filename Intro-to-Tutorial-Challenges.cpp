@@ -53,6 +53,27 @@ int introTutorial2(int V, vector<int> arr)
     return -1;
 }
 
+int introTutorial22(int V, vector<int> arr)
+{
+    int left = 0;
+    int right = arr.size() - 1;
+
+    while (left <= right)
+    {
+        int m = left + (right - left) / 2
+
+        if (arr[m] == V)
+            return m;
+        else if (arr[m] < V)
+            left = m + 1;
+        else
+            right = m - 1;
+    }
+
+    return -1;
+}
+
+
 
 int introTutorial3(int V, vector<int> arr)
 {
