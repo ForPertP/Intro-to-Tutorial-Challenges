@@ -50,3 +50,42 @@ int introTutorial3(int V, vector<int> arr)
     auto index = std::find(arr.begin(), arr.end(), V);
     return index - arr.begin();
 }
+
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string V_temp;
+    getline(cin, V_temp);
+
+    int V = stoi(ltrim(rtrim(V_temp)));
+
+    string n_temp;
+    getline(cin, n_temp);
+
+    int n = stoi(ltrim(rtrim(n_temp)));
+
+    string arr_temp_temp;
+    getline(cin, arr_temp_temp);
+
+    vector<string> arr_temp = split(rtrim(arr_temp_temp));
+
+    vector<int> arr(n);
+
+    for (int i = 0; i < n; i++) {
+        int arr_item = stoi(arr_temp[i]);
+
+        arr[i] = arr_item;
+    }
+
+    int result = introTutorial(V, arr);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
+
+
