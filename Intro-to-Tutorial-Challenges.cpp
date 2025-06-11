@@ -24,15 +24,6 @@ int introTutorial(int V, std::vector<int> arr)
         return -1;
 }
 
-int introTutorial1(int V, std::vector<int> arr)
-{
-    auto it = std::lower_bound(arr.begin(), arr.end(), V);
-    if (it != arr.end() && *it == V)
-        return it - arr.begin();
-    else
-        return -1;
-}
-
 
 int introTutorial2(int V, vector<int> arr)
 {
@@ -41,7 +32,7 @@ int introTutorial2(int V, vector<int> arr)
 
     while (left <= right)
     {
-        int median = (left + right) / 2;
+        int median = left + (right - left) / 2;
         if (arr[median] == V)
             return median;
         else if (arr[median] < V)
@@ -52,27 +43,6 @@ int introTutorial2(int V, vector<int> arr)
 
     return -1;
 }
-
-int introTutorial22(int V, vector<int> arr)
-{
-    int left = 0;
-    int right = arr.size() - 1;
-
-    while (left <= right)
-    {
-        int m = left + (right - left) / 2
-
-        if (arr[m] == V)
-            return m;
-        else if (arr[m] < V)
-            left = m + 1;
-        else
-            right = m - 1;
-    }
-
-    return -1;
-}
-
 
 
 int introTutorial3(int V, vector<int> arr)
@@ -118,10 +88,13 @@ int main()
     return 0;
 }
 
+
 string ltrim(const string &str)
 {
     string s(str);
-    s.erase( s.begin(), find_if(s.begin(), s.end(), [](unsigned char ch) { return !isspace(ch); }));
+    s.erase(
+        s.begin(), find_if(s.begin(), s.end(), [](unsigned char ch) { return !isspace(ch); })
+    );
     return s;
 }
 
@@ -132,26 +105,6 @@ string rtrim(const string &str)
         find_if(s.rbegin(), s.rend(), [](unsigned char ch) { return !isspace(ch); }).base(), s.end()
     );
     return s;
-}
-
-vector<string> split(const string &str)
-{
-    vector<string> tokens;
-    string_view str_view(str);
-    size_t = start = 0;
-    size_t = end = 0;
-    
-    while ( (end = str_view.find(' ', start)) != std::string_view::npos )
-    {
-        if (end > start)
-            tokens.emplace_back(string_view.substr(start, end);
-        start = end + 1;
-    }
-
-    if (start < str.lenght())
-        tokens.emplace_back(string_view.substr(start, end));
-
-    return tokens;
 }
 
 std::vector<string> split(const string &str)
