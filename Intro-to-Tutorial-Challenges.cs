@@ -12,7 +12,6 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
-
 class Result
 {
 
@@ -27,9 +26,25 @@ class Result
     
     public static int introTutorial(int V, List<int> arr)
     {
-    }
-}
+        int left = 0, right = arr.Count;
+        while (left <= right)
+        {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] < V)
+                left = mid + 1;
+            else
+                right = mid - 1;
+        }
 
+        if (left < arr.Count && arr[left] == V)
+            return left;
+        else
+            return -1;
+    }
+
+
+
+}
 
 
 class Solution
