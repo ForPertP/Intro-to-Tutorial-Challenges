@@ -43,6 +43,26 @@ class Result
     }
 
 
+public static int introTutorial2(int V, List<int> arr)
+    {
+        int left = 0, right = arr.Count - 1;
+
+        while (left <= right)
+        {
+            int mid = (left + right) / 2;
+            if (arr[mid] == V)
+                return mid;
+            else if (arr[mid] < V)
+                left = mid + 1;
+            else
+                right = mid - 1;
+        }
+
+        return -1;
+    }
+
+    
+
 
 }
 
