@@ -27,13 +27,13 @@ class Result
     public static int introTutorial(int V, List<int> arr)
     {
         int left = 0, right = arr.Count;
-        while (left <= right)
+        while (left < right)
         {
             int mid = left + (right - left) / 2;
             if (arr[mid] < V)
                 left = mid + 1;
             else
-                right = mid - 1;
+                right = mid;
         }
 
         if (left < arr.Count && arr[left] == V)
@@ -43,7 +43,7 @@ class Result
     }
 
 
-public static int introTutorial2(int V, List<int> arr)
+    public static int introTutorial2(int V, List<int> arr)
     {
         int left = 0, right = arr.Count - 1;
 
@@ -61,9 +61,17 @@ public static int introTutorial2(int V, List<int> arr)
         return -1;
     }
 
-    
 
+    public static int introTutorial3(int V, List<int> arr)
+    {
+        for (int i = 0; i < arr.Count; i++)
+        {
+            if (arr[i] == V)
+                return i;
+        }
 
+        return -1;
+    }    
 }
 
 
