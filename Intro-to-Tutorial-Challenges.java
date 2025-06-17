@@ -9,3 +9,17 @@ import java.util.regex.*;
 import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
+
+
+class Result {
+
+    /*
+     * Complete the 'introTutorial' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER V
+     *  2. INTEGER_ARRAY arr
+     */
+  
+}
