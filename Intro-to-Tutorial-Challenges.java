@@ -10,7 +10,6 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-
 class Result {
 
     /*
@@ -21,7 +20,51 @@ class Result {
      *  1. INTEGER V
      *  2. INTEGER_ARRAY arr
      */
-  
+
+    public static int introTutorial(int V, List<Integer> arr) {
+
+        int left = 0, right = arr.size();
+        while (left < right) {
+            int mid = (left + right) / 2;
+            if (arr.get(mid) < V)
+                left = mid + 1;
+            else
+                right = mid;
+        }
+
+        if (left < arr.size() && arr.get(left) == V)
+            return left;
+        else
+            return -1;
+    }
+
+
+    public static int introTutorial2(int V, List<Integer> arr) {
+        int left = 0, right = arr.size() - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            int value = arr.get(mid);
+            if (value == V)
+                return mid;
+            else if (value < V)
+                left = mid + 1;
+            else
+                right = mid - 1;
+        }
+
+        return -1;
+    }
+
+
+    public static int introTutorial3(int V, List<Integer> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) == V)
+                return i;
+        }
+
+        return -1;
+    }
 }
 
 
