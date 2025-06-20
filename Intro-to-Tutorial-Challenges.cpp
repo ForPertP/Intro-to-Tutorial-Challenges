@@ -15,9 +15,10 @@ vector<string> split(const string &);
  *  2. INTEGER_ARRAY arr
  */
 
-int introTutorial(int V, std::vector<int> arr)
+int introTutorial(int V, vector<int> arr)
 {
     auto it = std::lower_bound(arr.begin(), arr.end(), V);
+    
     if (it != arr.end() && *it == V)
         return it - arr.begin();
     else
