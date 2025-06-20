@@ -22,8 +22,8 @@ class Result {
      */
 
     public static int introTutorial(int V, List<Integer> arr) {
-
         int left = 0, right = arr.size();
+        
         while (left < right) {
             int mid = (left + right) / 2;
             if (arr.get(mid) < V)
